@@ -13,14 +13,14 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-const AAL_ACCESS_KEY = 'アクセスキー';
-const AAL_SECRET_KEY = 'シークレットキー';
-const AAL_PARTNER_TAG = 'トラッキングID';
-
 add_action('init', 'ImzAssociateLink::init');
 
 class ImzAssociateLink
 {
+    const AAL_ACCESS_KEY = 'アクセスキー';
+    const AAL_SECRET_KEY = 'シークレットキー';
+    const AAL_PARTNER_TAG = 'トラッキングID';
+
     private $wpdb;
     private $table;
 
@@ -92,9 +92,9 @@ class ImzAssociateLink
             $cache = 'no'; // 確認用
             $serviceName="ProductAdvertisingAPI";
             $region="us-west-2";
-            $accessKey=AAL_ACCESS_KEY;
-            $secretKey=AAL_SECRET_KEY;
-            $partnerTag=AAL_PARTNER_TAG;
+            $accessKey=self::AAL_ACCESS_KEY;
+            $secretKey=self::AAL_SECRET_KEY;
+            $partnerTag=self::AAL_PARTNER_TAG;
             $payload="{"
                     ." \"ItemIds\": ["
                     ."  \"$asin\""
